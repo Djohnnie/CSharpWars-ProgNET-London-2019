@@ -13,7 +13,6 @@ namespace CSharpWars.Tests.Mapping.DependencyInjection
     public class ServiceCollectionExtensionsTests
     {
         [Theory]
-        [InlineData(typeof(IMapper<Player, PlayerDto>), typeof(PlayerMapper))]
         [InlineData(typeof(IMapper<Bot, BotDto>), typeof(BotMapper))]
         [InlineData(typeof(IMapper<Bot, BotToCreateDto>), typeof(BotToCreateMapper))]
         public void ConfigureMapping_Should_Register_Singleton_Mapper_Classes(Type mapperType, Type mapperImplementation)

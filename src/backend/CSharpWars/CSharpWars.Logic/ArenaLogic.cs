@@ -13,6 +13,7 @@ namespace CSharpWars.Logic
         {
             _configurationHelper = configurationHelper;
         }
+
         public Task<ArenaDto> GetArena()
         {
             return Task.FromResult(new ArenaDto

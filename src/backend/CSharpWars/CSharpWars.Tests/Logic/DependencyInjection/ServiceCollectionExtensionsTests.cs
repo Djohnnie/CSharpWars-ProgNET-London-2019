@@ -13,7 +13,6 @@ namespace CSharpWars.Tests.Logic.DependencyInjection
     {
         [Theory]
         [InlineData(typeof(IArenaLogic), typeof(ArenaLogic))]
-        [InlineData(typeof(IPlayerLogic), typeof(PlayerLogic))]
         [InlineData(typeof(IBotLogic), typeof(BotLogic))]
         public void ConfigureLogic_Should_Register_Transient_Logic_Classes(Type logicType, Type logicImplementation)
         {

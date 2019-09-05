@@ -11,7 +11,6 @@ namespace CSharpWars.Web.Api.Controllers
     {
         public ArenaController(IArenaLogic arenaLogic) : base(arenaLogic) { }
 
-        // GET api/values
         [HttpGet]
         public Task<IActionResult> GetArena()
         {

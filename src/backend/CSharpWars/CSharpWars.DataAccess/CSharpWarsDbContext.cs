@@ -17,8 +17,6 @@ namespace CSharpWars.DataAccess
 
         public DbSet<BotScript> BotScripts { get; set; }
 
-        public DbSet<Message> Messages { get; set; }
-
         public CSharpWarsDbContext(IConfigurationHelper configurationHelper)
         {
             _configurationHelper = configurationHelper;
@@ -56,13 +54,6 @@ namespace CSharpWars.DataAccess
             {
                 e.ToTable("BOTS").HasKey(x => x.Id).ForSqlServerIsClustered(false);
                 e.HasOne<Bot>().WithOne().HasForeignKey<BotScript>(x => x.Id);
-            });
-
-            modelBuilder.Entity<Message>(e =>
-            {
-                e.ToTable("MESSAGES").HasKey(x => x.Id).ForSqlServerIsClustered(false);
-                e.Property<Int32>("SysId").UseSqlServerIdentityColumn();
-                e.HasIndex("SysId").ForSqlServerIsClustered();
             });
         }
     }
