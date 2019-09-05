@@ -73,7 +73,6 @@
     <Compile Include="Assets\Scripts\Controllers\RangedAttackController.cs" />
     <Compile Include="Assets\Scripts\Controllers\StaminaTagController.cs" />
     <Compile Include="Assets\Scripts\Controllers\TagController.cs" />
-    <Compile Include="Assets\Scripts\Extensions\MonoBehaviourExtensions.cs" />
     <Compile Include="Assets\Scripts\Helpers\Animations.cs" />
     <Compile Include="Assets\Scripts\Helpers\OrientationVector.cs" />
     <Compile Include="Assets\Scripts\Model\Arena.cs" />

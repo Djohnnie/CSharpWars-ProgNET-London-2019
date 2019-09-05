@@ -15,10 +15,7 @@ namespace Assets.Scripts.Controllers
 
         void Start()
         {
-            _arena = ApiClient.GetArena();
-            _floor = GameObject.Find("Floor");
-            _floor.transform.localScale = new Vector3((float)_arena.Width, PlatformHeight, (float)_arena.Height);
-            _floor.GetComponent<Renderer>().material.mainTextureScale = new Vector2((float)_arena.Width, (float)_arena.Height);
+            
         }
 
         public Vector3 ArenaToWorldPosition(int x, int y)
