@@ -1,12 +1,10 @@
 ﻿using System;
-using System.Diagnostics.CodeAnalysis;
 using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace CSharpWars.DataAccess.Migrations
 {
-    [ExcludeFromCodeCoverage]
-    partial class InitialMigration : Migration
+    public partial class Initial_Migration : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -44,6 +42,7 @@ namespace CSharpWars.DataAccess.Migrations
                     CurrentStamina = table.Column<int>(nullable: false),
                     Memory = table.Column<string>(nullable: true),
                     Move = table.Column<int>(nullable: false),
+                    TimeOfDeath = table.Column<DateTime>(nullable: false),
                     LastAttackX = table.Column<int>(nullable: false),
                     LastAttackY = table.Column<int>(nullable: false),
                     PlayerId = table.Column<Guid>(nullable: true),

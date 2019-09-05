@@ -3,7 +3,6 @@ using System.Reflection;
 using CSharpWars.Common.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 using CSharpWars.Logic.DependencyInjection;
-using Swashbuckle.AspNetCore.Swagger;
 
 namespace CSharpWars.Web.Api.DependencyInjection
 {
@@ -19,12 +18,6 @@ namespace CSharpWars.Web.Api.DependencyInjection
             {
                 builder.AllowAnyOrigin().AllowAnyMethod().AllowAnyHeader();
             }));
-
-            services.AddSwaggerGen(c =>
-            {
-                c.SwaggerDoc("v1", new Info { Title = "CSharpWars", Version = "v1" });
-                c.IncludeXmlComments(Path.ChangeExtension(Assembly.GetEntryAssembly().Location, "xml"));
-            });
         }
     }
 }
