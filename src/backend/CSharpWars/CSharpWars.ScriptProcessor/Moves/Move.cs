@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using CSharpWars.Common.Helpers;
 using CSharpWars.Common.Helpers.Interfaces;
 using CSharpWars.Enums;
 using CSharpWars.Scripting.Model;
@@ -9,7 +8,6 @@ using CSharpWars.ScriptProcessor.Middleware;
 
 namespace CSharpWars.ScriptProcessor.Moves
 {
-
     public abstract class Move
     {
         private static readonly Dictionary<PossibleMoves, Func<BotProperties, IRandomHelper, Move>> _moves = new Dictionary<PossibleMoves, Func<BotProperties, IRandomHelper, Move>>

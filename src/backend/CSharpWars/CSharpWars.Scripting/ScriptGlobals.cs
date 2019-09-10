@@ -189,15 +189,6 @@ namespace CSharpWars.Scripting
             }
         }
 
-        /// <summary>
-        /// Calling this method will make the player talk.
-        /// </summary>
-        /// <param name="message"></param>
-        public void Talk(String message)
-        {
-            _50437079C366407D978Fe4Afd60C535F.Messages.Add(message);
-        }
-
         #endregion
 
         #region <| Helper Methods |>

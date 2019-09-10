@@ -54,7 +54,6 @@ namespace CSharpWars.Tests.Scripting
             result.MaximumStamina.Should().Be(bot.MaximumStamina);
             result.CurrentStamina.Should().Be(bot.CurrentStamina);
             result.Memory.Should().BeEquivalentTo(bot.Memory.Deserialize<Dictionary<String, String>>());
-            result.Messages.Should().BeEquivalentTo(new List<String>());
             result.Bots.Should().BeEquivalentTo(bots, p => p
                 .Including(x => x.Id)
                 .Including(x => x.Name)

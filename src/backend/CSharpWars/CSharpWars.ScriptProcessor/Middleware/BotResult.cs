@@ -16,7 +16,6 @@ namespace CSharpWars.ScriptProcessor.Middleware
         public Int32 CurrentHealth { get; set; }
         public Int32 CurrentStamina { get; set; }
         public Dictionary<String, String> Memory { get; set; }
-        public List<String> Messages { get; set; }
         public PossibleMoves Move { get; set; }
         public Int32 LastAttackX { get; set; }
         public Int32 LastAttackY { get; set; }
@@ -33,7 +32,6 @@ namespace CSharpWars.ScriptProcessor.Middleware
                 CurrentHealth = botProperties.CurrentHealth,
                 CurrentStamina = botProperties.CurrentStamina,
                 Memory = botProperties.Memory,
-                Messages = botProperties.Messages,
                 Move = PossibleMoves.Idling,
                 LastAttackX = botProperties.MoveDestinationX,
                 LastAttackY = botProperties.MoveDestinationY

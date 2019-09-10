@@ -23,7 +23,6 @@ namespace CSharpWars.Scripting.Model
         public Int32 MaximumStamina { get; private set; }
         public Int32 CurrentStamina { get; private set; }
         public Dictionary<String, String> Memory { get; private set; }
-        public List<String> Messages { get; private set; }
         public List<Bot> Bots { get; set; }
         public PossibleMoves CurrentMove { get; set; }
         public Int32 MoveDestinationX { get; set; }
@@ -56,7 +55,6 @@ namespace CSharpWars.Scripting.Model
                 MaximumStamina = bot.MaximumStamina,
                 CurrentStamina = bot.CurrentStamina,
                 Memory = bot.Memory.Deserialize<Dictionary<String, String>>(),
-                Messages = new List<String>(),
                 Bots = BuildBots(bots),
                 CurrentMove = PossibleMoves.Idling
             };

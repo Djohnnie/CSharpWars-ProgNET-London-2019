@@ -160,22 +160,6 @@ namespace CSharpWars.Tests.Scripting
             botProperties.Memory.Should().HaveCount(0);
         }
 
-        [Fact]
-        public void ScriptGlobals_Talk_Should_Add_Entry_To_Messages()
-        {
-            // Arrange
-            var botProperties = BuildBotProperties();
-            var scriptGlobals = ScriptGlobals.Build(botProperties);
-            var message = "Message!";
-
-            // Act
-            scriptGlobals.Talk(message);
-
-            // Assert
-            botProperties.Messages.Should().HaveCount(1);
-            botProperties.Messages.Should().Contain(message);
-        }
-
         private BotProperties BuildBotProperties()
         {
             var bot = new BotDto
