@@ -1,14 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using CSharpWars.Common.Helpers.Interfaces;
-using CSharpWars.DtoModel;
-using CSharpWars.Enums;
-using CSharpWars.Scripting;
-using CSharpWars.Scripting.Model;
-using CSharpWars.ScriptProcessor.Moves;
-using CSharpWars.Tests.Framework.FluentAssertions;
-using FluentAssertions;
-using Moq;
 using Xunit;
 
 namespace CSharpWars.Tests.Scripting.Moves
@@ -18,39 +8,14 @@ namespace CSharpWars.Tests.Scripting.Moves
         [Fact]
         public void Building_A_Move_From_SelfDestruct_Move_Should_Create_An_Instance_Of_SelfDestruct()
         {
-            // Arrange
-            var bot = new BotDto { };
-            var arena = new ArenaDto { Width = 1, Height = 1 };
-            var botProperties = BotProperties.Build(bot, arena, new List<BotDto>());
-            botProperties.CurrentMove = PossibleMoves.SelfDestruct;
-            var randomHelper = new Mock<IRandomHelper>();
-
-            // Act
-            var move = Move.Build(botProperties, randomHelper.Object);
-
-            // Assert
-            move.Should().NotBeNull();
-            move.Should().BeOfType<SelfDestruct>();
+            throw new NotImplementedException();
         }
 
 
         [Fact]
         public void Executing_A_SelfDestruct_Should_Kill_The_Bot()
         {
-            // Arrange
-            var bot = new BotDto { CurrentHealth = 100 };
-            var arena = new ArenaDto { Width = 1, Height = 1 };
-            var botProperties = BotProperties.Build(bot, arena, new List<BotDto>());
-            botProperties.CurrentMove = PossibleMoves.SelfDestruct;
-            var randomHelper = new Mock<IRandomHelper>();
-
-            // Act
-            var result = Move.Build(botProperties, randomHelper.Object).Go();
-
-            // Assert
-            result.Should().NotBeNull();
-            result.Move.Should().Be(PossibleMoves.SelfDestruct);
-            result.CurrentHealth.Should().BeZero();
+            throw new NotImplementedException();
         }
 
         [Theory]
@@ -80,21 +45,7 @@ namespace CSharpWars.Tests.Scripting.Moves
         [InlineData(6, 6)]
         public void Executing_A_SelfDestruct_Should_Damage_Minimum_Vicinity_Bots_With_Minimum_Damage(Int32 victimX, Int32 victimY)
         {
-            // Arrange
-            var bot = new BotDto { CurrentHealth = 100, X = 3, Y = 3 };
-            var victim = new BotDto { Id = Guid.NewGuid(), CurrentHealth = 100, X = victimX, Y = victimY };
-            var arena = new ArenaDto { Width = 7, Height = 7 };
-            var botProperties = BotProperties.Build(bot, arena, new List<BotDto>(new[] { victim }));
-            botProperties.CurrentMove = PossibleMoves.SelfDestruct;
-            var expectedDamage = Constants.SELF_DESTRUCT_MIN_DAMAGE;
-            var randomHelper = new Mock<IRandomHelper>();
-
-            // Act
-            var result = Move.Build(botProperties, randomHelper.Object).Go();
-
-            // Assert
-            result.Should().NotBeNull();
-            result.GetInflictedDamage(victim.Id).Should().Be(expectedDamage);
+            throw new NotImplementedException();
         }
 
         [Theory]
@@ -116,21 +67,7 @@ namespace CSharpWars.Tests.Scripting.Moves
         [InlineData(4, 4)]
         public void Executing_A_SelfDestruct_Should_Damage_Medium_Vicinity_Bots_With_Medium_Damage(Int32 victimX, Int32 victimY)
         {
-            // Arrange
-            var bot = new BotDto { CurrentHealth = 100, X = 2, Y = 2 };
-            var victim = new BotDto { Id = Guid.NewGuid(), CurrentHealth = 100, X = victimX, Y = victimY };
-            var arena = new ArenaDto { Width = 5, Height = 5 };
-            var botProperties = BotProperties.Build(bot, arena, new List<BotDto>(new[] { victim }));
-            botProperties.CurrentMove = PossibleMoves.SelfDestruct;
-            var expectedDamage = Constants.SELF_DESTRUCT_MED_DAMAGE + Constants.SELF_DESTRUCT_MIN_DAMAGE;
-            var randomHelper = new Mock<IRandomHelper>();
-
-            // Act
-            var result = Move.Build(botProperties, randomHelper.Object).Go();
-
-            // Assert
-            result.Should().NotBeNull();
-            result.GetInflictedDamage(victim.Id).Should().Be(expectedDamage);
+            throw new NotImplementedException();
         }
 
         [Theory]
@@ -144,21 +81,7 @@ namespace CSharpWars.Tests.Scripting.Moves
         [InlineData(2, 2)]
         public void Executing_A_SelfDestruct_Should_Damage_Maximum_Vicinity_Bots_With_Maximum_Damage(Int32 victimX, Int32 victimY)
         {
-            // Arrange
-            var bot = new BotDto { CurrentHealth = 100, X = 1, Y = 1 };
-            var victim = new BotDto { Id = Guid.NewGuid(), CurrentHealth = 100, X = victimX, Y = victimY };
-            var arena = new ArenaDto { Width = 3, Height = 3 };
-            var botProperties = BotProperties.Build(bot, arena, new List<BotDto>(new[] { victim }));
-            botProperties.CurrentMove = PossibleMoves.SelfDestruct;
-            var expectedDamage = Constants.SELF_DESTRUCT_MAX_DAMAGE + Constants.SELF_DESTRUCT_MED_DAMAGE + Constants.SELF_DESTRUCT_MIN_DAMAGE;
-            var randomHelper = new Mock<IRandomHelper>();
-
-            // Act
-            var result = Move.Build(botProperties, randomHelper.Object).Go();
-
-            // Assert
-            result.Should().NotBeNull();
-            result.GetInflictedDamage(victim.Id).Should().Be(expectedDamage);
+            throw new NotImplementedException();
         }
     }
 }

@@ -1,11 +1,5 @@
-﻿using System.Collections.Generic;
-using CSharpWars.Common.Helpers.Interfaces;
-using CSharpWars.DtoModel;
+﻿using System;
 using CSharpWars.Enums;
-using CSharpWars.Scripting.Model;
-using CSharpWars.ScriptProcessor.Moves;
-using FluentAssertions;
-using Moq;
 using Xunit;
 
 namespace CSharpWars.Tests.Scripting.Moves
@@ -15,43 +9,14 @@ namespace CSharpWars.Tests.Scripting.Moves
         [Fact]
         public void Building_A_Move_From_TurningAround_Move_Should_Create_An_Instance_Of_TurnAround()
         {
-            // Arrange
-            var bot = new BotDto { };
-            var arena = new ArenaDto { Width = 1, Height = 1 };
-            var botProperties = BotProperties.Build(bot, arena, new List<BotDto>());
-            botProperties.CurrentMove = PossibleMoves.TurningAround;
-            var randomHelper = new Mock<IRandomHelper>();
-
-            // Act
-            var move = Move.Build(botProperties, randomHelper.Object);
-
-            // Assert
-            move.Should().NotBeNull();
-            move.Should().BeOfType<TurnAround>();
+            throw new NotImplementedException();
         }
 
         [Theory]
         [ClassData(typeof(TurningAroundTheoryData))]
         public void Turning_Around_Should_Work(PossibleOrientations originOrientation, PossibleOrientations destinationOrientation)
         {
-            // Arrange
-            var bot = new BotDto
-            {
-                Orientation = originOrientation
-            };
-            var arena = new ArenaDto { Width = 1, Height = 1 };
-            var botProperties = BotProperties.Build(bot, arena, new List<BotDto>());
-            botProperties.CurrentMove = PossibleMoves.TurningAround;
-            var randomHelper = new Mock<IRandomHelper>();
-            var move = Move.Build(botProperties, randomHelper.Object);
-
-            // Act
-            var botResult = move.Go();
-
-            // Assert
-            botResult.Should().NotBeNull();
-            botResult.Move.Should().Be(PossibleMoves.TurningAround);
-            botResult.Orientation.Should().Be(destinationOrientation);
+            throw new NotImplementedException();
         }
 
         private class TurningAroundTheoryData : TheoryData<PossibleOrientations, PossibleOrientations>
