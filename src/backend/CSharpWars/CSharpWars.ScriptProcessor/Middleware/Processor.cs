@@ -1,7 +1,5 @@
 ﻿using System.Linq;
 using System.Threading.Tasks;
-using CSharpWars.Logic.Interfaces;
-using CSharpWars.ScriptProcessor.Interfaces;
 using CSharpWars.ScriptProcessor.Middleware.Interfaces;
 
 namespace CSharpWars.ScriptProcessor.Middleware
